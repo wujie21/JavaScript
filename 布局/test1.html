@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+      html {
+        font-size: 10px;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        background-color: blanchedalmond;
+      }
+      .box {
+        float: left;
+      }
+      .box1 {
+        width: 10rem;
+        height: 10rem;
+        background-color: red;
+        float: none;
+      }
+      .box2 {
+        width: 30rem;
+        height: 30rem;
+        background-color: blue;
+      }
+      .box3 {
+        width: 20rem;
+        height: 20rem;
+        background-color: yellow;
+      }
+    </style>
+    <title>test1</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+    </div>
+  </body>
+</html>
+
+<!-- body使用了flex布局，container不会出现高度塌陷问题，而且宽高会自动被内容（包括浮动元素）撑开 -->

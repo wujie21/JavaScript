@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .outer {
+      width: 20rem;
+      height: 20rem;
+      background-color: antiquewhite;
+    }
+
+    .inner {
+      width: 10rem;
+      height: 10rem;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="inner"></div>
+  </div>
+  <script>
+    var phases = {
+      1: 'capture',
+      2: 'target',
+      3: 'bubble'
+    };
+    let outer = document.querySelector('.outer')
+    let inner = document.querySelector('.inner')
+
+    function callback(event) {
+      var tag = event.currentTarget.tagName;
+      var phase = phases[event.eventPhase];
+      console.log("Tag: '" + tag + "'. EventPhase: '" + phase + "'");
+    }
+    outer.addEventListener('click', callback, true)
+    outer.addEventListener('click', callback, false)
+    inner.addEventListener('click', callback, true)
+    inner.addEventListener('click', callback, false)
+  </script>
+</body>
+<!-- 事件传播
+  一个事件发生后，会经历三个阶段：
+  1、从window对象传递至目标节点（比如点击节点），称为捕获阶段capture parse；
+  2、在目标节点触发，称为目标阶段target parse；
+  3、从目标节点传回window对象，称为冒泡阶段bubble parse。
+
+  应用：事件委托（代理）
+  由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件。
+
+  阻止事件传播，但不取消事件：event.stopPropagation()
+  // 事件捕获到 p 元素后，就不再向下传播了。
+  p.addEventListener('click', function (event) {
+    event.stopPropagation();
+  }, true);
+
+  // 事件冒泡到 p 元素后，就不再向上冒泡了。
+  p.addEventListener('click', function (event) {
+    event.stopPropagation();
+  }, false); 
+  *由于未取消事件：p元素绑定的其他click监听函数会执行*
+
+  阻止事件传播，同时取消事件：event.stopImmediatePropagation();
+  p.addEventListener('click', function (event) {
+    event.stopImmediatePropagation();
+    console.log(1);
+  });
+
+  p.addEventListener('click', function(event) {
+    // 不会被触发
+    console.log(2);
+  });
+-->
+
+</html>

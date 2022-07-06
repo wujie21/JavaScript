@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+html {
+  font-size: 10px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  background-color: blanchedalmond;
+}
+.box {
+  float: left;
+}
+.box1 {
+  width: 10rem;
+  height: 10rem;
+  background-color: red;
+}
+.box2 {
+  width: 30rem;
+  height: 30rem;
+  background-color: blue;
+}
+.box3 {
+  width: 20rem;
+  height: 20rem;
+  background-color: yellow;
+}

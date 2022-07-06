@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+      }
+      html {
+        font-size: 10px;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      .dome {
+        width: 20rem;
+        height: 20rem;
+        border: 0.2rem solid silver;
+        transition: border-color 0.5s ease-in 0.1s,
+          background-color 0.5s ease-in 0.1s, color 0.5s ease-in 0.1s;
+      }
+      .dome:hover {
+        border-color: rebeccapurple;
+        background-color: wheat;
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dome"></div>
+    <script>
+      let ele = document.querySelector("div.dome");
+      console.log(ele);
+      ele.addEventListener("transitionend", (e) => {
+        console.log(e.propertyName);
+      });
+    </script>
+  </body>
+</html>

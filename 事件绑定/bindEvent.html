@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: blanchedalmond;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+    /* JS提供三种绑定事件的方式：内联、ele.event、addEventListener（推荐） 
+    参考文档：https://wangdoc.com/javascript/events/eventtarget.html
+    target.addEventListener(type, listener[, useCapture]);
+    type：事件名称，大小写敏感。
+    listener：监听函数。事件发生时，会调用该监听函数。此参数还可以是一个具有handleEvent方法的对象。
+    useCapture：布尔值，如果设为true，表示监听函数将在捕获阶段（capture）触发。默认值为false（监听函数只在冒泡阶段被触发）。此参数还可以是一个监听器配置对象。
+    
+    target.removeEventListener(type, listener[, useCapture])：移除addEventListener()方法添加的事件监听函数。该方法没有返回值。参数需要和对应addEventListener一致。
+
+    target.dispatchEvent(event)：在当前节点上触发指定事件，从而触发监听函数的执行。
+    该方法返回一个布尔值，只要有一个监听函数调用了Event.preventDefault()，则返回值为false，否则为true。
+    示例：
+    para.addEventListener('click', hello, false);
+    var event = new Event('click');
+    para.dispatchEvent(event);  //触发para的click事件，从而触发hello监听函数
+    */
+   let ele=document.querySelector("div")
+   ele.addEventListener("click",()=>{console.log('clicked')},false)
+   let click=new Event('click')
+   ele.dispatchEvent(click)
+    </script>
+  </body>
+</html>

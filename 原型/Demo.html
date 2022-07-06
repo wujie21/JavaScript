@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function foo() {}
+      console.log(typeof foo, foo);
+      console.log(typeof foo.prototype, foo.prototype);
+      console.log(foo.prototype.constructor === foo);
+      console.log(foo.__proto__ === Function.prototype);
+      /* prototype指向构造函数的原型；__proto__指向对象的原型 */
+      /* 函数也是对象(Function的实例），所有函数的原型都是Function.prototype */
+
+      /* Obj instanceof Class：左边是一个对象；右边必须是类名或构造函数名。
+      比较原理*****：
+        obj.__proto__ === Class.prototype?
+        obj.__proto__.__proto__ === Class.prototype?
+        obj.__proto__.__proto__.__proto__ === Class.prototype?
+        ...
+      */
+
+      class Animal {}
+      class Rabbit extends Animal {}
+      /* 注意class类继承对原型链的影响 */
+      console.log(Rabbit.prototype.__proto__ === Animal.prototype);
+      let rabbit = new Rabbit();
+      console.log(rabbit instanceof Animal); // true
+    </script>
+  </body>
+</html>

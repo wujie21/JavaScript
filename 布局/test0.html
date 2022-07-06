@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      background-color: bisque;
+    }
+    .clearfix::before,
+    .clearfix::after{
+      content: '';
+      clear: both;
+      display: table;
+    }
+    .box{
+      width: 20rem;
+      height: 20rem;
+      background-color: red;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container clearfix">
+    <div class="box"></div>
+  </div>
+</body>
+</html>
+
+<!-- 高度塌陷：父容器没有指定高度，且容器内所有元素都设置了浮动，那么父容器高度将为0。解决方案如上。-->

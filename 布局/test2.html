@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>传统布局</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+      html {
+        font-size: 10px;
+      }
+      .container {
+        width: 80rem;
+        background-color: blanchedalmond;
+      }
+      .box {
+        /* display: flex; */
+        float: left;
+      }
+      .box1 {
+        width: 30rem;
+        height: 30rem;
+        background-color: red;
+        /* float: none; */
+      }
+      .box2 {
+        width: 10rem;
+        height: 10rem;
+        background-color: blue;
+        /* float: none; */
+      }
+      .box3 {
+        width: 41rem;
+        height: 9rem;
+        background-color: yellow;
+        /* float: none; */
+      }
+      .box4 {
+        width: 40rem;
+        height: 40rem;
+        background-color: pink;
+        /* float: none; */
+      }
+      .box5 {
+        width: 40rem;
+        height: 40rem;
+        background-color: orange;
+        float: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1">f</div>
+      <div class="box box2">f</div>
+      <div class="box box3">b</div>
+      <div class="box box4">f</div>
+      <div class="box box5">b</div>
+    </div>
+  </body>
+</html>
+
+<!-- 浮动元素display属性值不同，表现不同：
+  算法分析：浏览器是自上而下解析网页的（要能在脑子里模拟该算法过程**）。
+  1、display:block
+  假设现解析（添加）一个浮动元素，规律为：
+  1）现有的block元素独占一行（该浮动元素不得占据现有block元素的行）；
+  2）该浮动元素会由近及远去贴前浮动元素的边（宽度不允许则换行），没找到浮动元素则贴父级容器的边。
+  3）block元素按照标准流排列。
+
+  2、display:flex
+  假设现解析（添加）一个浮动元素，规律为：
+  1）现有的flex元素独占一行（该浮动元素必须在现有flex元素之下）；
+  2）该浮动元素会由近及远去贴前浮动元素的边（宽度不允许则换行），没找到则贴父级容器的边。
+  假设现解析（添加）一个flex元素，规律为：
+  1）现有的flex元素独占一行（该flex元素必须在现有flex元素之下）；
+  2）该flex元素会由近及远去贴前面浮动元素的边（宽度不允许则换行），没找到浮动元素则贴父级容器的边。
+-->

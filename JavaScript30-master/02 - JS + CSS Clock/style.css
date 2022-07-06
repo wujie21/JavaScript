@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+html {
+  background: #abc7d3 url(background.jpg);
+  background-size: cover;
+  font-size: 10px;
+  font-family: "helvetica neue";
+  text-align: center;
+}
+
+body {
+  font-size: 2rem;
+  display: flex;
+  /* 此属性会被容器内的元素继承。*/
+  flex: 1;
+  min-height: 100vh;
+  /* 项目垂直居中 */
+  align-items: center;
+}
+
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 2rem solid white;
+  border-radius: 50%;
+  /* 盒子模型+传统布局 ？？？？？*/
+  position: relative;
+    /* 水平居中 */
+  margin: 5rem auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 0 1px 2px #efefef,
+    inset 0 0 30px black, 0 0 10px 3px rgba(0, 0, 0, 0.2);
+}

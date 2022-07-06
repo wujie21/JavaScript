@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>传统布局</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+      html {
+        font-size: 10px;
+      }
+      /*body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    } */
+      .container {
+        background-color: blanchedalmond;
+      }
+      .box {
+        font-size: 2rem;
+        float: left;
+      }
+      .box1 {
+        width: 30rem;
+        height: 30rem;
+        background-color: red;
+      }
+      .box2 {
+        width: 10rem;
+        height: 10rem;
+        background-color: blue;
+        float: none;
+      }
+      .box3 {
+        width: 20rem;
+        height: 20rem;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+    </div>
+  </body>
+</html>
+<!-- 
+  1、标准流（文档流）：默认的布局方式。参见盒子模型。
+  2、浮动：float：none | left | right.
+  浮动特性：
+    1）浮动的元素会脱标，浮动的盒子不再占有原来的位置*
+    2）一般先用标准流的父元素排列上下位置，内部子元素采取浮动排列左右位置(不用display:inline-block，因为无法消除间隙)
+    3）浮动元素不会横向溢出，但会纵向溢出
+  
+  浮动影响：浮动元素会脱标，不占有原来位置。原来位置会被后面的标准流元素占据，但有时候我们不希望这种情况发生，就需要清除这种影响。
+  clear:left|right|both属性用来清除浮动影响。原理*：浏览器会给设置该属性的元素自动加上上边距（等于浮动元素最大高度）
+  高度塌陷：如果父容器没有指定高度，且容器内所有元素都设置了浮动，那么父容器高度将为0.可以用清除浮动解决此问题：
+  .clearfix::after{
+    content:'';
+    display:table;
+    clear:both;
+  }
+  实验结果：body使用flex布局，也不会出现高度塌陷问题。
+  
+  外边距合并：当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+  注意：只有普通文档流中块框的垂直外边距才会发生外边距合并！！！
+  父子元素外边距合并解决方案：
+  .clearfix::before{
+    content:'';
+    display:table;
+    clear:both;
+  }
+  3、定位：
+ -->

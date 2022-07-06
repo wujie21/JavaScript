@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="keys">
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+    </div>
+
+    <script>
+      /* 通用模板：
+      document.querySelector("ele")
+      document.querySelector("[propName]")
+      document.querySelector("[propName=value]")
+      document.querySelector("ele[propName]")
+      document.querySelector("ele[propName=value]") */
+
+      /* 获取文档中第一个p元素 */
+      document.querySelector("p");
+      /* 获取文档中第一个具有class属性的元素 */
+      document.querySelector("[class]");
+      /* 获取文档中第一个class=example的元素 */
+      document.querySelector("[class=example]");
+      document.querySelector(".example");
+      /* 获取文档中第一个class="foo bar"的元素 */
+      document.querySelector(`[class="foo bar"]`); /* 反引号写法！！！ */
+      /* 获取文档中第一个class=foo或id=bar的元素 */
+      document.querySelector(`[class=foo],[id=bar]`);
+      /* 获取文档中第一个class=foo且id=bar的div元素 */
+      document.querySelector(`div[class=foo][id=bar]`); /* 牛逼！！！ */
+      /* 获取文档中第一个有属性target的p元素 */
+      document.querySelector("p[target]");
+      /* 获取文档中第一个类名为example的p元素 */
+      document.querySelector("p[class=example]");
+      document.querySelector("p.example");
+
+      /* <div class="user-panel main"><input name="login" /></div>：获取其中的input元素 */
+      document.querySelector(
+        `div[class="user-panel main"] input[name='login']`
+      );
+
+      let keys=document.querySelectorAll(".key")  /* NodeList对象（类数组对象） */
+      keys.forEach((key)=>{console.log(key)})
+      for(key of keys){
+        console.log(key)
+      }
+      /* document.querySelectorAll：获取所有 */
+    </script>
+  </body>
+</html>

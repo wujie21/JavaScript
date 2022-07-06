@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 深拷贝最简便的方法是使用lodash的cloneDeep函数。以下通过“递归”实现简单的对象深拷贝。 */
+      let obj = {
+        name: "wujie",
+        hobby: ["wuqianyun", "javascript"],
+        wife: {
+          name: "wuqianyun",
+          hobby: ["wujie", "css"],
+        },
+      };
+      function deepClone(target) {
+        // 如果是对象，且不是原始值null
+        if (typeof target === "object" && target !== "null") {
+          //注解一
+          // 创建容器
+          const result = Array.isArray(target) ? [] : {}; //注解三
+          const keys = Object.keys(target); //注解二
+          // Object.keys()会过滤掉原型链上的属性
+          keys.forEach((key) => {
+            result[key] = deepClone(target[key]); // 注解三
+          });
+          return result;
+        }
+        // 如果是原始值，则直接返回
+        return target;
+      }
+    </script>
+  </body>
+</html>

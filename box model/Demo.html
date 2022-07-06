@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盒模型</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .block {
+      display: block;
+      width: 40rem;
+      height: 30rem;
+      background-color: bisque;
+      margin: 1rem;
+      padding: 2rem;
+      border: 1rem solid silver;
+      text-align: center;
+    }
+    .inline{
+      display: inline-block;
+      background-color:pink;
+      font-size: 2rem;
+      width: 18rem;
+      height: 10rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="block">
+    <div class="inline">inline inline</div>
+    <div class="inline">inline inline</div>
+  </div>
+
+  <!-- 
+    标准盒子模型，由四个部分组成：box = margin + border + padding + content
+    1、content：内容。
+    2、padding：内边距。设置content和border的距离。
+    3、border：盒子的边框。
+    4、margin：外边距。设置其与相邻盒子间的距离。
+    盒子总宽度：width + padding-left + padding-right + border-left + border-right + margin-left + margin-right
+    盒子总高度：height + padding-top + padding-bottom + border-top + border-bottom + margin-top + margin-bottom
+   -->
+
+  <!-- 
+     盒子类型：
+     1、block
+      独占一行
+      一般作为容器，常见block元素有：div、dl、dt、dd、ol、ul、fieldset、（h1-h6）、p、form、hr、table、tr、td等
+     2、inline
+     一行内显示
+     宽度和高度只能由内容决定（width/height属性无效）
+     
+     3、inline-block
+     一行内显示
+     可设置宽度和高度
+
+     *盒子类型可通过display属性设置*
+    -->
+</body>
+
+</html>

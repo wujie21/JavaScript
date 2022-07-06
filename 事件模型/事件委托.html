@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      background-color: brown;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>.</li>
+    <li>.</li>
+    <li>.</li>
+  </ul>
+
+  <script>
+    let ul = document.querySelector('ul')
+    // ul的click监听函数将在冒泡阶段触发
+    ul.addEventListener('click', callback,false)
+
+    function callback(e) {
+      // target为触发事件的节点（目标节点），currentTarget事件传播到的节点。
+      if(e.target.tagName==='LI'){
+        e.target.innerText+='.'
+      }
+    }
+  </script>
+</body>
+
+</html>

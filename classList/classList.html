@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="demo box"></div>
+  <script>
+    let ele=document.querySelector("div")
+    /* DOM元素具有classList属性，它指向一个类数组对象 */
+    console.log(typeof ele.classList,ele.classList)
+    /* 该对象具有一些方法，可以增删改查元素的class属性值：
+      ele.classList.add("newCSS")
+      ele.classList.remove("oldCSS")
+    */
+  </script>
+</body>
+</html>
