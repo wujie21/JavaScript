@@ -7,7 +7,7 @@ https://juejin.cn/post/6844903635868975111
 for(const key in object){
   ...
 }
-遍历对象自身与原型上可枚举的、非Symbol属性。遍历顺序不确定。
+遍历对象自身与原型上可枚举的、非Symbol属性key。遍历顺序不确定。
 let obj={
   name:'wujie',
   age:17,
