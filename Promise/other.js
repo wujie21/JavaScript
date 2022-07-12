@@ -1,4 +1,7 @@
-/* Promise.all(promiseList) */
+/* let p=Promise.all(promiseList) */
+/* promiseList所有成员都resolved，p的状态才会变成resolved，此时promiseList所有成员的value组成一个数组，作为p的value。
+   promiseList所有成员中有一个被rejected，p的状态就变成rejected，此时第一个被reject的实例的err，作为p的err
+*/
 let p = Promise.all([
   Promise.resolve("p1"),
   /* Promise.resolve("p2"), */
@@ -10,9 +13,6 @@ p.then((value) => {
 }).catch((err) => {
   console.log(err); //p2
 });
-/* promiseList所有成员都resolved，p的状态才会变成resolved，此时promiseList所有成员的value组成一个数组，作为p的value。
-   promiseList所有成员中有一个被rejected，p的状态就变成rejected，此时第一个被reject的实例的err，作为p的err
-*/
 
 /* Promise.race(promiseList) */
 /* 返回promiseList中第一个率先改变状态的实例 */
