@@ -13,7 +13,7 @@ reject函数的参数，指定了promise对象rejected时的错误信息，建�
 
 /* .then(onFulfill,onRejected)返回值，是Promise.resolve()对回调函数返回值的包装。 */
 /* .catch(onRejected)相当于.then(null, rejection) */
-/* .finally()：resolved和rejected后都会执行 */
+/* .finally(()=>{})：resolved和rejected后都会执行回调函数 */
 let p1 = p.then(
   (value) => {
     return value;
