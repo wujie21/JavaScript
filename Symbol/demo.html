@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      /* ES6提供了11个内置Symbol值，指向内部定义的方法 */
+      /* 1、Symbol.hasInstance
+      当执行foo instanceof Foo在语言时，实际是“自动调用”Foo[Symbol.hasInstance](foo)
+      */
+     class Even{
+      /* 可以改写内置方法 */
+      static [Symbol.hasInstance](obj){
+        return Number(obj)%2===0;
+      }
+     }
+     console.log(1 instanceof Even)
+     console.log(2 instanceof Even)
+    </script>
+  </body>
+</html>
