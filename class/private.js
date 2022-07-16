@@ -1,6 +1,8 @@
 /* 私有属性和方法：# */
 class demo{
   /* 私有属性和方法只能在类的内部使用obj.#prop。在类的外部，obj.#prop一律报错。 */
+  /* 私有属性和方法定义在实例上，不会被继承 */
+  /* 不成熟，不建议使用 */
   #value=0
   #inner(){
     console.log("used only in class")
@@ -12,6 +14,7 @@ class demo{
 }
 let d=new demo()
 d.showValue()
+console.log(d)
 
 /* in操作符 */
 class C {
