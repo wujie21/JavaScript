@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box{
+        background-color: red;
+      }
+      div{
+        width: 20rem;
+        height: 20rem;
+        background-color: #fff !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
+<!-- 优先级：当为同一个元素指定多个选择器时，可能会产生“样式冲突”。CSS样式优先级规则可以解决这个问题。
+        1、CSS样式优先级高的被应用；
+        2、CSS样式优先级相同，后定义的样式被应用；
+        3、CSS样式后面加 !important 时表示最高优先级，无条件被应用；
+     选择器的权重决定样式的优先级，见“选择器权重表”。
+     复合选择器存在权重叠加现象。权重只有叠加，没有进位=》0，0，1，0永远大于0，0，0，x，x可以任意大。
+-->
