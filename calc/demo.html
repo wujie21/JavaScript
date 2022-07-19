@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 为了告诉浏览器使用屏幕上所有的可用空间，并以此使用env()变量，我们需要添加一个新的视口元值 -->
+    <!-- env( <custom-ident> , <declaration-value>? ) -->
+    <meta name="viewport" content="viewport-fit=cover" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+      html {
+        font-size: 10px;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px)
+          env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
+      }
+      .box {
+        width: 100px;
+        height: calc(100% - 10rem);
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
+<!-- calc(四则运算) ：动态计算长度值
+     1、可以混合使用各种单位来进行计算
+     2、运算符左右需要空格！！！
+-->
