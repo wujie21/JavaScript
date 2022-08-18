@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>随机摇号</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+    }
+    html{
+      font-size: 10px;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      color: red;
+      font-size: 10rem;
+      background-color:bisque;
+    }
+  </style>
+</head>
+<body>
+  随机摇号
+  <script>
+    let names=['朱铭祺','王天乐','黄建博','逯子凤','王林阳','王震','魏雅婷','梁作成',
+    '王禹鈃','徐苏凡','王泽滨','周姝含','王韶玉','张晓阳','刘媛','赵小雨','杨朝阳',
+    '杜巧燕','叶雨宸','常永政','王润佳','宋子欣','王野','赵鑫','许竞月','陈顺红','金泽俊',
+    '吴捷','刘玉玲','丁雪净','郭天宇']
+    let isRunning=false
+    let len=names.length
+    let body=document.querySelector('body')
+    let id=undefined
+    function touch(){
+      isRunning=!isRunning
+      if(id){
+        clearTimeout(id)
+      }
+      if(isRunning){
+        setTimeout(function(){
+          let g=Math.floor(Math.random()*len)
+          body.innerHTML=names[g]
+          /* arguments.callee指向所在函数 */
+          id=setTimeout(arguments.callee,200)
+        },200)
+      }    
+    }
+    body.addEventListener('click',touch)
+  </script>
+</body>
+</html>

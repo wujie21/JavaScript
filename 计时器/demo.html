@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>计时器</title>
+</head>
+<body>
+  <script>
+    /* 
+    setTimeout(fn,t)：t毫秒后执行函数fn（t告诉JS再过多久把当前任务添加到队列中）
+    setInterval(fn,t)：每隔t毫秒运行一次fn（t告诉JS每隔多久把当前任务添加到队列中）。容易出现问题，不推荐使用。
+    clearTimeout(id)/clearInterval(id)
+    */
+
+    /* 使用setTimeout模拟间歇调用 */
+    let names=['朱铭祺','王天乐','黄建博','逯子凤','王林阳','王震','魏雅婷','梁作成',
+    '王禹鈃','徐苏凡','王泽滨','周姝含','王韶玉','张晓阳','刘媛','赵小雨','杨朝阳',
+    '杜巧燕','叶雨宸','常永政','王润佳','宋子欣','王野','赵鑫','许竞月','陈顺红','金泽俊',
+    '吴捷','刘玉玲','丁雪净','郭天宇']
+    let len=names.length
+    setTimeout(fetchName,500)
+    function fetchName(){
+      let g=Math.floor(Math.random()*len)
+      console.log(names[g])
+      setTimeout(arguments.callee,500)
+    }
+  </script>
+</body>
+</html>
