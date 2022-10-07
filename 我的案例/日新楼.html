@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扫码-师生校内行动轨迹查询</title>
+  <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/moment.js/2.29.1/moment-with-locales.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav{
+      margin-bottom: 55px;
+    }
+    .image{
+      width:414px;
+    }
+    .tab{
+      width: 370px;
+      font-size: 17px;
+      border-collapse: collapse;
+    }
+    .tab td{
+      border-bottom: 1px solid #f1f1f1;
+      height: 41px;
+    }
+    .tab .title{
+      width: 77px;
+      text-align: justify;
+      text-align-last: justify;
+    }
+    .tab .content{
+      padding-left: 50px;
+    }
+    .footer{
+      margin-top: 380px;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <img src="https://pcsdata.baidu.com/thumbnail/c89202910l914dcbbfe27057385c1c35?fid=380073501-16051585-53165651797474&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-Oo0xpQ6hNX3VFOpYPbPKHGArqeo%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=8788933127237069537&dp-callid=0&time=1665115200&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video" class="image"/>
+  </div>
+  <table class="tab">
+    <tr>
+      <td class="title">申请时间</td>
+      <td class="content" id="date_time">2022-10-06 10:08:10</td>
+    </tr>
+    <tr>
+      <td class="title">姓名</td>
+      <!-- 在此处修改你的姓名 -->
+      <td class="content">吴捷</td>
+    </tr>    
+    <tr>
+      <td class="title">学号/工作证号/手机号</td>
+      <!-- 在此处修改你的学号 -->
+      <td class="content">2021252060</td>
+    </tr>  
+    <tr>
+      <td class="title">学院/单位</td>
+      <!-- 在此处修改你的学院号 -->
+      <td class="content">商学院</td>
+    </tr>  
+    <tr>
+      <td class="title">楼宇</td>
+      <!-- 在此处修改你的楼宇 -->
+      <td class="content">中心校区-日新楼</td>
+    </tr>
+  </table>
+  <div class="footer">
+    <img src="https://pcsdata.baidu.com/thumbnail/bd20dc4cagf31fa38730107fcc0fbc32?fid=380073501-16051585-1023303324674159&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-rw4AUpkdNOttPPxrI7EgzBj%2FizM%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=8788941654207591572&dp-callid=0&time=1665115200&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video" class="image">
+  </div>
+  <script>
+    let ele=document.getElementById("date_time");
+    ele.innerHTML=moment().format('YYYY-MM-DD hh:mm:ss')
+  </script>
+</body>
+</html>
