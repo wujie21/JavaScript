@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>crypto</title>
+</head>
+<body>
+  <script>
+  var arr = new Uint16Array(8);
+  var crypto = window.crypto || window.webkitCrypto || window.mozCrypto || window.oCrypto || window.msCrypto;
+  window.crypto.getRandomValues(arr);
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+  // cryptoObj.getRandomValues(typedArray);
+  // typedArray是一个基于整数的 TypedArray，它可以是 Int8Array、Uint8Array、Int16Array、 Uint16Array、 Int32Array 或者 Uint32Array。在数组中的所有的元素会被随机数重写。（注释：生成的随机数储存在 typedArray 数组上。）
+  </script>
+</body>
+</html>

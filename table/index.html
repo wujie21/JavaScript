@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+    }
+    html{
+      font-size: 10px;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .tb{
+      width: 30rem;
+      height: 20rem;
+      border:0.1rem solid silver;
+      /* 边框塌陷 */
+      /* border-collapse: collapse; */
+    }
+    .tb td,.tb th{
+      border: 0.1rem solid silver;
+      /* padding: 0;  不要使用cellpadding */
+    }
+  </style>
+</head>
+<body>
+  <!-- 不要在table标签里使用border属性，建议使用 CSS 来添加边框样式和颜色!!! -->
+  <table class="tb">
+    <!-- 表标题 -->
+    <caption>名单</caption>
+    <!-- <tr> 元素定义表格行 -->
+        <tr>
+          <!-- <th> 定义表格内的表头单元格，元素内部的文本通常会呈现为居中的粗体文本 -->
+          <th></th>
+          <th>姓名</th>
+          <th>年龄</th>
+        </tr>
+        <tr>
+          <!-- <td> 定义 HTML 表格中的标准单元格，元素中的文本一般显示为正常字体且左对齐。 -->
+          <th>女生</th>
+          <td>张莉</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <th>男生</th>
+          <td>杨洋</td>
+          <td>26</td>
+        </tr>
+  </table>
+</body>
+</html>
