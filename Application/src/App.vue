@@ -1,9 +1,9 @@
 <script setup>
-import Home from './components/Home.vue'
+import { Toast, Button } from 'vant'
 </script>
 
 <template>
-  <Home></Home>
+  <Button>GO</Button>
 </template>
 
 <style scoped>
