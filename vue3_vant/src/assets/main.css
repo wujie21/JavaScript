@@ -1,9 +1,5 @@
 @import "./base.css";
 
-html{
-  font-size: 10px;
-}
-
 #app {
   max-width: 1280px;
   margin: 0 auto;
