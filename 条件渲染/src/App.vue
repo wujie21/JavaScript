@@ -1,17 +1,24 @@
 <script setup>
 import { ref } from 'vue'
-import { nanoid } from 'nanoid'
-/* 列表渲染：尽量使用数组（对象数组很够用）；给每个数组项指定一个唯一id，作为:key绑定值 */
-let arr = ref([
-  { uuid: nanoid(), name: 'wujie', age: 12, sex: 'male', },
-  { uuid: nanoid(), name: 'yumw', age: 12, sex: 'female', }
-])
+let age = ref(12)
 </script>
 
 <template>
   <div class="container">
-    <template v-for="(item, index) in arr" :key="item.uuid">
-      {{ index + 1 }} my name is {{ item.name }}, I'm {{ item.age }} years old.<br>
+    <template v-if="age < 14">
+      未成年
+    </template>
+    <template v-else-if="age < 30">
+      青年
+    </template>
+    <template v-else-if="age < 50">
+      壮年
+    </template>
+    <template v-else-if="age < 60">
+      中老年
+    </template>
+    <template v-else>
+      老年
     </template>
   </div>
 </template>
